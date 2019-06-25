@@ -4,8 +4,8 @@ provider "digitalocean" {
   token = "${var.do_token}"
 }
 
-resource "digitalocean_kubernetes_cluster" "foo" {
-  name    = "foo"
+resource "digitalocean_kubernetes_cluster" "sikademo" {
+  name    = "sikademo"
   region  = "fra1"
   version = "1.14.2-do.0"
 
@@ -17,5 +17,5 @@ resource "digitalocean_kubernetes_cluster" "foo" {
 }
 
 output "kubeconfig" {
-  value = "${digitalocean_kubernetes_cluster.foo.kube_config.0.raw_config}"
+  value = "${digitalocean_kubernetes_cluster.sikademo.kube_config.0.raw_config}"
 }
