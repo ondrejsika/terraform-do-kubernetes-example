@@ -6,7 +6,7 @@ provider "digitalocean" {
 
 resource "digitalocean_kubernetes_cluster" "foo" {
   name    = "foo"
-  region  = "nyc1"
+  region  = "fra1"
   version = "1.14.2-do.0"
 
   node_pool {
