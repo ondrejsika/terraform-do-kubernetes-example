@@ -7,7 +7,7 @@ provider "digitalocean" {
 resource "digitalocean_kubernetes_cluster" "sikademo" {
   name    = "sikademo"
   region  = "fra1"
-  version = "1.14.2-do.0"
+  version = "1.14.4-do.1"
 
   node_pool {
     name       = "worker-pool"
