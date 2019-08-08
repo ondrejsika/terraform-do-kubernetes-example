@@ -16,6 +16,40 @@ resource "digitalocean_kubernetes_cluster" "sikademo" {
   }
 }
 
+
+resource "digitalocean_loadbalancer" "sikademo" {
+  name = "sikademo"
+  region = "fra1"
+
+  droplet_tag = "k8s:${digitalocean_kubernetes_cluster.sikademo.id}"
+
+  healthcheck {
+    port = 30001
+    protocol = "tcp"
+  }
+
+  forwarding_rule {
+    entry_port  = 80
+    target_port = 30001
+    entry_protocol = "tcp"
+    target_protocol = "tcp"
+  }
+
+  forwarding_rule {
+    entry_port  = 443
+    target_port = 30002
+    entry_protocol = "tcp"
+    target_protocol = "tcp"
+  }
+
+  forwarding_rule {
+    entry_port  = 8080
+    target_port = 30003
+    entry_protocol = "tcp"
+    target_protocol = "tcp"
+  }
+}
+
 output "kubeconfig" {
   value = "${digitalocean_kubernetes_cluster.sikademo.kube_config.0.raw_config}"
 }
