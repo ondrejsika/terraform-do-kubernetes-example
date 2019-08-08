@@ -7,3 +7,4 @@ terraform.tfvars
 .terraform.tfstate.lock.info
 
 kubeconfig
+kubeconfig-sikademo
