@@ -19,7 +19,7 @@ resource "digitalocean_kubernetes_cluster" "sikademo" {
   version = "1.14.5-do.0"
 
   node_pool {
-    name       = "worker-pool"
+    name       = "sikademo"
     size       = "s-2vcpu-2gb"
     node_count = 3
   }
