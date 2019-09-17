@@ -16,7 +16,7 @@ provider "cloudflare" {
 resource "digitalocean_kubernetes_cluster" "sikademo" {
   name    = "sikademo"
   region  = "fra1"
-  version = "1.15.3-do.1"
+  version = "1.15.3-do.2"
 
   node_pool {
     name       = "sikademo"
