@@ -36,6 +36,12 @@ terraform plan
 terraform apply -auto-approve
 ```
 
+If you need latest version of Digital Ocean's Kubernetes, use this:
+
+```
+doctl kubernetes options versions
+```
+
 ### Get your Kubernetes config
 
 ```
