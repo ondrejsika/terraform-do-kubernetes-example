@@ -51,7 +51,7 @@ terraform output kubeconfig > kubeconfig
 ### Test connection to cluster
 
 ```
-export KUBECONFIG=kubeconfig
+export KUBECONFIG=$(pwd)/kubeconfig
 kubectl cluster-info
 kubectl get nodes
 ```
