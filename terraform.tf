@@ -70,8 +70,8 @@ resource "cloudflare_record" "k8s" {
 
 resource "cloudflare_record" "k8s_wildcard" {
   domain = "sikademo.com"
-  name   = "*.k8s"
-  value  = "k8s.sikademo.com"
+  name   = "*.${cloudflare_record.k8s.name}"
+  value  = "${cloudflare_record.k8s.hostname}"
   type   = "CNAME"
   proxied = false
 }
