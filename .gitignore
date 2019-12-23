@@ -1,8 +1,7 @@
+.state
 .DS_Store
 .terraform
 terraform.tfvars
-*.tfstate
-*.tfstate.backup
 *.log
 .terraform.tfstate.lock.info
 
