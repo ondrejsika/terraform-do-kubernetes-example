@@ -4,12 +4,12 @@ variable "cloudflare_token" {}
 
 
 provider "digitalocean" {
-  token = "${var.do_token}"
+  token = var.do_token
 }
 
 provider "cloudflare" {
-  email = "${var.cloudflare_email}"
-  token = "${var.cloudflare_token}"
+  email = var.cloudflare_email
+  token = var.cloudflare_token
 }
 
 
@@ -65,7 +65,7 @@ resource "digitalocean_loadbalancer" "sikademo" {
 resource "cloudflare_record" "k8s" {
   domain = "sikademo.com"
   name   = "k8s"
-  value  = "${digitalocean_loadbalancer.sikademo.ip}"
+  value  = digitalocean_loadbalancer.sikademo.ip
   type   = "A"
   proxied = false
 }
@@ -73,12 +73,12 @@ resource "cloudflare_record" "k8s" {
 resource "cloudflare_record" "k8s_wildcard" {
   domain = "sikademo.com"
   name   = "*.${cloudflare_record.k8s.name}"
-  value  = "${cloudflare_record.k8s.hostname}"
+  value  = cloudflare_record.k8s.hostname
   type   = "CNAME"
   proxied = false
 }
 
 
 output "kubeconfig" {
-  value = "${digitalocean_kubernetes_cluster.sikademo.kube_config.0.raw_config}"
+  value = digitalocean_kubernetes_cluster.sikademo.kube_config.0.raw_config
 }
