@@ -16,10 +16,12 @@ provider "cloudflare" {
 resource "digitalocean_kubernetes_cluster" "sikademo" {
   name    = "sikademo"
   region  = "fra1"
+  // Get available versions using: doctl kubernetes options versions
   version = "1.16.6-do.2"
 
   node_pool {
     name       = "sikademo"
+    // Get available sizes using: doctl kubernetes options sizes
     size       = "s-2vcpu-2gb"
     node_count = 3
   }
