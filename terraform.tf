@@ -81,4 +81,5 @@ resource "cloudflare_record" "k8s_wildcard" {
 
 output "kubeconfig" {
   value = digitalocean_kubernetes_cluster.sikademo.kube_config.0.raw_config
+  sensitive = true
 }
