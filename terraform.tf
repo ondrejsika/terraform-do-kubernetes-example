@@ -22,7 +22,7 @@ resource "digitalocean_kubernetes_cluster" "sikademo" {
   node_pool {
     name       = "sikademo"
     // Get available sizes using: doctl kubernetes options sizes
-    size       = "s-2vcpu-2gb"
+    size       = "s-4vcpu-8gb"
     node_count = 3
   }
 }
