@@ -59,6 +59,13 @@ resource "digitalocean_loadbalancer" "sikademo" {
     entry_protocol = "tcp"
     target_protocol = "tcp"
   }
+
+  forwarding_rule {
+    entry_port  = 25
+    target_port = 30025
+    entry_protocol = "tcp"
+    target_protocol = "tcp"
+  }
 }
 
 
