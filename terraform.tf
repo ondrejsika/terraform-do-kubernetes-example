@@ -86,6 +86,10 @@ resource "cloudflare_record" "k8s_wildcard" {
 }
 
 
+output "lb_ip" {
+  value  = digitalocean_loadbalancer.sikademo.ip
+}
+
 output "kubeconfig" {
   value = digitalocean_kubernetes_cluster.sikademo.kube_config.0.raw_config
   sensitive = true
