@@ -1,4 +1,6 @@
-# Example of Terraform, Digital Ocean, Kubernetes
+> DEPRECATED in favor of [ondrejsika/terraform-demo-k8s](https://github.com/ondrejsika/terraform-demo-k8s)
+
+# [DEPRECATED] Example of Terraform, Digital Ocean, Kubernetes
 
     Ondrej Sika <ondrej@ondrejsika.com>
     https://github.com/ondrejsika/terraform-do-kubernetes-example
